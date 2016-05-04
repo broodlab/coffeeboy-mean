@@ -13,6 +13,11 @@ gulp.task("task:clean-dist-d-api-js-files", function () {
     .pipe(clean());
 });
 
+gulp.task("task:clean-dist-d-api-shared-js-files", function () {
+  return gulp.src("build/dist-d/api/shared", {read: false})
+    .pipe(clean());
+});
+
 gulp.task("task:clean-dist-d-api-e2e-js-files", function () {
   return gulp.src("build/dist-d/api/e2e", {read: false})
     .pipe(clean());
