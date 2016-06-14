@@ -5,9 +5,10 @@ const runNodeApp = require("../shared/run-node-app");
 const seq = require("run-sequence");
 
 gulp.task("workflow:test-e2e-api", () => {
+  process.env["COFFEEBOY_PROFILE"] = "development";
 
   runNodeApp.createStartStopNodeAppTasks({
-    appFilePath: "dist/d/api/api/api.app.js",
+    appFilePath: "dist/d/api/api/index.js",
     appName: "CoffeeBoy API",
     startTaskName: "task:start-api",
     stopTaskName: "task:stop-api"

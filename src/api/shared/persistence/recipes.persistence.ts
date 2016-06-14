@@ -1,4 +1,4 @@
-import {IRecipe} from "../../shared/models/recipe.model";
+import {IRecipe} from "../../../shared/models/recipe.model";
 import * as mongoose from "mongoose";
 
 export interface IRecipesDocument extends IRecipe, mongoose.Document {

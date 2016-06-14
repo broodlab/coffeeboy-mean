@@ -1,8 +1,8 @@
-import {apiFactory} from "../api.factory";
+import {apiFactory} from "../shared/api.factory";
 import * as express from "express";
 import {IRecipe} from "../../shared/models/recipe.model";
 
-export function init(api: express.Application): void {
+export function init(api: express.Router): void {
   "use strict";
 
   api.get("/recipes", (req: express.Request, res: express.Response) => {

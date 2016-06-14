@@ -4,6 +4,7 @@ const gulp = require("gulp");
 const seq = require("run-sequence");
 
 gulp.task("workflow:test-unit-api", () => {
+  process.env["COFFEEBOY_PROFILE"] = "development";
 
   seq(
     ["task:clean-dist-directory", "task:install-api-typings"],

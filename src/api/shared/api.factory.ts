@@ -1,4 +1,5 @@
-import {IRecipesBusiness, RecipesBusiness} from "./recipes/recipes.business";
+import {IRecipesBusiness} from "./interfaces";
+import {RecipesBusiness} from "./services/recipes.business";
 import {recipesPersistence} from "./persistence/recipes.persistence";
 
 export interface IApiFactory {

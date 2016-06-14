@@ -5,6 +5,7 @@ const gulp = require("gulp");
 const seq = require("run-sequence");
 
 gulp.task("workflow:dev-ui", () => {
+  process.env["COFFEEBOY_PROFILE"] = "development";
 
   bundleUi.createBundleUiTask({
     destDirPath: "dist/d/ui",

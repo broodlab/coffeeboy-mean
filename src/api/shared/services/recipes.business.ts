@@ -1,14 +1,8 @@
-import {IRecipe} from "../../shared/models/recipe.model";
+import {IRecipe} from "../../../shared/models/recipe.model";
+import {IRecipesBusiness} from "../../shared/interfaces";
 import {IRecipesDocument} from "../persistence/recipes.persistence";
 import {Model} from "mongoose";
 import {Promise} from "mongoose";
-
-export interface IRecipesBusiness {
-
-  createRecipe(recipe: IRecipe): Promise<IRecipe>;
-  deleteRecipes(): Promise<any>;
-  getRecipes(): Promise<IRecipe[]>;
-}
 
 export class RecipesBusiness implements IRecipesBusiness {
 

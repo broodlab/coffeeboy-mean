@@ -1,6 +1,6 @@
-import {apiFactory} from "../../api.factory";
+import {apiFactory} from "../../shared/api.factory";
 import * as chai from "chai";
-import {config} from "../../api.config";
+import {config} from "../../app/config";
 import {IRecipe} from "../../../shared/models/recipe.model";
 import * as mongoose from "mongoose";
 import * as request from "supertest";
@@ -9,7 +9,7 @@ import {Response} from "superagent";
 describe("'recipes' API resource:", () => {
 
   beforeEach((done) => {
-    mongoose.connect(config().databaseUrl, (err: any) => {
+    mongoose.connect(config.databaseUrl, (err: any) => {
       if (err) {
         return console.error("[mongoose] " + err);
       }
@@ -27,7 +27,7 @@ describe("'recipes' API resource:", () => {
   describe("The GET method should", () => {
 
     it("provide an empty list if there are no recipes.", (done) => {
-      request(config().serverUrl)
+      request(config.serverUrl)
         .get("/recipes")
         .expect([])
         .end(done);
@@ -45,7 +45,7 @@ describe("'recipes' API resource:", () => {
           return apiFactory().recipesBusiness().createRecipe(recipes[1]);
         })
         .then(() => {
-          request(config().serverUrl)
+          request(config.serverUrl)
             .get("/recipes")
             .expect((response: Response) => {
               chai.expect(response.body.length).to.eql(recipes.length);
