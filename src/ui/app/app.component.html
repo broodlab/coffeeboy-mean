@@ -1,6 +1,22 @@
-<div>
-  Hello from <span class="app">{{name()}}</span> <span class="shared">component</span>! Foo component's styles do <span
-  class="foo">NOT</span> affect me.
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">Toolbar...</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-2">
+      <nav>
+        <ul>
+          <li>
+            <a [routerLink]="['Recipes']">Coffee Recipes</a>
+          </li>
+          <li>
+            <a [routerLink]="['Inventory']">Inventory</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-xs-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
-<foo></foo>
-<button class="btn btn-primary">Bootstrap Button</button>

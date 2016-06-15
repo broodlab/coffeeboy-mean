@@ -5,9 +5,9 @@ import "bootstrap/dist/css/bootstrap.css";
 import {bootstrap} from "@angular/platform-browser-dynamic";
 import {enableProdMode} from "@angular/core";
 import {HTTP_PROVIDERS} from "@angular/http";
-import "./shared/shared.scss";
+import "./shared/styles.scss";
 
-if (process.env.ENV === "production") {
+if (process.env.COFFEEBOY_PROFILE === "production") {
   enableProdMode();
 }
 
