@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-12">
+    <ng-content select="header"></ng-content>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-2">
+    <nav>
+      <ul>
+        <li>
+          <a [routerLink]="['Recipes']">Coffee Recipes</a>
+        </li>
+        <li>
+          <a [routerLink]="['Inventory']">Inventory</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="col-xs-10">
+    <ng-content select="content"></ng-content>
+  </div>
+</div>

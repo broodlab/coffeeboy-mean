@@ -13,12 +13,12 @@ config.moduleLoaders = {
   component_sass: {
     test: /\.scss$/,
     loaders: ["raw", "sass"],
-    exclude: [path.resolve("src", "ui", "shared")]
+    exclude: [path.resolve("src", "ui", "shared", "styles")]
   },
   shared_sass: {
     test: /\.scss$/,
     loaders: ["style", "css", "sass"],
-    include: [path.resolve("src", "ui", "shared")]
+    include: [path.resolve("src", "ui", "shared", "styles")]
   },
   html: {
     test: /\.html$/,

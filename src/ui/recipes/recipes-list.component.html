@@ -1,7 +1,12 @@
-<ul>
-  <li *ngFor="let recipe of recipes()">
-    <span class="recipe-name">{{recipe.name}}</span>
-    <br/>
+<page>
+  <header>
+    <appbar [title]="'Coffee Recipes'"></appbar>
+  </header>
+  <content>
+    <ul>
+      <li *ngFor="let recipe of recipes()">
+        <span class="recipe-name">{{recipe.name}}</span>
+        <br/>
     <span class="ingredients">
       Water: {{recipe.waterMl}} ml |
       Coffee Bean: {{recipe.coffeeBeanMl}} ml |
@@ -9,5 +14,8 @@
       Milk: {{recipe.milkMl}} ml |
       Milk Froth: {{recipe.milkFrothMl}} ml
     </span>
-  </li>
-</ul>
+      </li>
+    </ul>
+  </content>
+</page>
+

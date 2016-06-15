@@ -1,5 +1,4 @@
 import {Component} from "@angular/core";
-import {FooComponent} from "../foo/foo.component";
 import {InventoryComponent} from "../inventory/inventory.component";
 import {RecipesComponent} from "../recipes/recipes-list.component";
 import {
@@ -13,7 +12,7 @@ import {
   providers: [ROUTER_PROVIDERS],
   styles: [require("./app.component.scss")],
   template: require("./app.component.html"),
-  directives: [ROUTER_DIRECTIVES, FooComponent, RecipesComponent]
+  directives: [ROUTER_DIRECTIVES, RecipesComponent]
 })
 @RouteConfig([
   {path: "/recipes", name: "Recipes", component: RecipesComponent, useAsDefault: true},

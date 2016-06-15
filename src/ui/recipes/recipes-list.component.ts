@@ -1,5 +1,7 @@
+import {AppbarComponent} from "../shared/components/appbar/appbar.component";
 import {Component} from "@angular/core";
 import {IRecipe} from "../../shared/models/recipe.model";
+import {PageComponent} from "../shared/components/page/page.component";
 import {RecipesService} from "../shared/services/recipes.service";
 import "../shared/rxjs-operators.ts";
 
@@ -7,7 +9,8 @@ import "../shared/rxjs-operators.ts";
   selector: "recipes-list",
   providers: [RecipesService],
   styles: [require("./recipes-list.component.scss")],
-  template: require("./recipes-list.component.html")
+  template: require("./recipes-list.component.html"),
+  directives: [AppbarComponent, PageComponent]
 })
 export class RecipesComponent {
 
