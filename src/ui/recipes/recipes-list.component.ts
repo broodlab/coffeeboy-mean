@@ -1,8 +1,9 @@
-import {AppbarComponent} from "../shared/components/appbar/appbar.component";
+import {AppbarComponent, IAppbarControl} from "../shared/components/appbar/appbar.component";
 import {Component} from "@angular/core";
 import {IRecipe} from "../../shared/models/recipe.model";
 import {PageComponent} from "../shared/components/page/page.component";
 import {RecipesService} from "../shared/services/recipes.service";
+import {Router} from "@angular/router-deprecated";
 import "../shared/rxjs-operators.ts";
 
 @Component({
@@ -16,7 +17,8 @@ export class RecipesComponent {
 
   private _recipes: IRecipe[];
 
-  constructor(private recipesService: RecipesService) {
+  constructor(private recipesService: RecipesService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -27,5 +29,16 @@ export class RecipesComponent {
 
   recipes(): IRecipe[] {
     return this._recipes;
+  }
+
+  appbarControls(): IAppbarControl[] {
+    return [
+      {
+        title: "Create",
+        clickHandler: () => {
+          this.router.navigate(["CreateRecipe"]);
+        }
+      }
+    ];
   }
 }

@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+import {CreateRecipeComponent} from "../create-recipe/create-recipe.component";
 import {InventoryComponent} from "../inventory/inventory.component";
 import {RecipesComponent} from "../recipes/recipes-list.component";
 import {
@@ -16,6 +17,7 @@ import {
 })
 @RouteConfig([
   {path: "/recipes", name: "Recipes", component: RecipesComponent, useAsDefault: true},
+  {path: "/create-recipe", name: "CreateRecipe", component: CreateRecipeComponent},
   {path: "/inventory", name: "Inventory", component: InventoryComponent}
 ])
 export class AppComponent {
