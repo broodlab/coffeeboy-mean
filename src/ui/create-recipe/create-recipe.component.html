@@ -1,6 +1,75 @@
 <page>
   <header>
-    <appbar [title]="'Create Coffee Recipe'"></appbar>
+    <appbar [title]="'Create Coffee Recipe'" [appbarControls]="appbarControls()"></appbar>
   </header>
-  <content>...</content>
+  <content>
+    <form #recipeForm="ngForm">
+      <div class="form-body">
+        <div class="form-group">
+          <label>Name</label>
+          <input class="form-control"
+                 #name="ngForm"
+                 ngControl="name"
+                 [(ngModel)]="recipe.name"
+                 required
+                 type="text"/>
+        </div>
+        <div class="form-group">
+          <label>Water</label>
+          <div class="input-group">
+            <input class="form-control"
+                   #waterMl="ngForm"
+                   ngControl="waterMl"
+                   [(ngModel)]="recipe.waterMl"
+                   type="number"/>
+            <div class="input-group-addon">ml</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Coffee Beans</label>
+          <div class="input-group">
+            <input class="form-control"
+                   #coffeeBeanMl="ngForm"
+                   ngControl="coffeeBeanMl"
+                   [(ngModel)]="recipe.coffeeBeanMl"
+                   type="number"/>
+            <div class="input-group-addon">ml</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Sugar</label>
+          <div class="input-group">
+            <input class="form-control"
+                   #sugarMl="ngForm"
+                   ngControl="sugarMl"
+                   [(ngModel)]="recipe.sugarMl"
+                   type="number"/>
+            <div class="input-group-addon">ml</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Milk</label>
+          <div class="input-group">
+            <input class="form-control"
+                   #milkMl="ngForm"
+                   ngControl="milkMl"
+                   [(ngModel)]="recipe.milkMl"
+                   type="number"/>
+            <div class="input-group-addon">ml</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Milk Froth</label>
+          <div class="input-group">
+            <input class="form-control"
+                   #milkFrothMl="ngForm"
+                   ngControl="milkFrothMl"
+                   [(ngModel)]="recipe.milkFrothMl"
+                   type="number"/>
+            <div class="input-group-addon">ml</div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </content>
 </page>

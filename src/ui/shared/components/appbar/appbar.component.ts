@@ -1,8 +1,8 @@
 import {Component, Input} from "@angular/core";
 
 export interface IAppbarControl {
+  clickHandler ?: () => void;
   title: string;
-  clickHandler: () => void;
 }
 
 @Component({
@@ -12,6 +12,6 @@ export interface IAppbarControl {
 })
 export class AppbarComponent {
 
-  @Input() title: string;
   @Input() appbarControls: IAppbarControl[];
+  @Input() title: string;
 }

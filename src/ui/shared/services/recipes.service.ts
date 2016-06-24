@@ -15,4 +15,11 @@ export class RecipesService {
         return response.json();
       });
   }
+
+  createRecipe(recipe: IRecipe): Observable<IRecipe> {
+    return this.http.post("api/recipes", recipe)
+      .map((response: Response) => {
+        return response.json();
+      });
+  }
 }

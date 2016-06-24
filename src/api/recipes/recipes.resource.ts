@@ -11,4 +11,11 @@ export function init(api: express.Router): void {
       res.send(recipes);
     });
   });
+
+  api.post("/recipes", (req: express.Request, res: express.Response) => {
+
+    apiFactory().recipesBusiness().createRecipe(req.body).then((recipe: IRecipe) => {
+      res.send(recipe);
+    });
+  });
 }
