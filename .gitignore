@@ -1,4 +1,5 @@
 .idea/
+.iml
 .sass-cache/
 bower_components/
 dist/
