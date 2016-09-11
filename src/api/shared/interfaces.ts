@@ -1,5 +1,4 @@
 import {IRecipe} from "../../shared/models/recipe.model";
-import {Promise} from "mongoose";
 
 export interface IRecipesBusiness {
 

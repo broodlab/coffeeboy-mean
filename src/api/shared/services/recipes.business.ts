@@ -2,7 +2,6 @@ import {IRecipe} from "../../../shared/models/recipe.model";
 import {IRecipesBusiness} from "../../shared/interfaces";
 import {IRecipesDocument} from "../persistence/recipes.persistence";
 import {Model} from "mongoose";
-import {Promise} from "mongoose";
 
 export class RecipesBusiness implements IRecipesBusiness {
 
@@ -10,7 +9,7 @@ export class RecipesBusiness implements IRecipesBusiness {
   }
 
   createRecipe(recipe: IRecipe): Promise<IRecipe> {
-    return <Promise<IRecipe>>this.recipesPersistence.create(recipe);
+    return this.recipesPersistence.create(recipe);
   }
 
   deleteRecipes(): Promise<any> {

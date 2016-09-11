@@ -8,8 +8,8 @@ const utils = require("./utils");
 exports.createLintTask = (options) => {
   gulp.task(options.taskName, () => {
     return gulp.src(options.sourceFilePaths)
-      .pipe(tslint())
-      .pipe(tslint.report("prose", {emitError: true}))
+      .pipe(tslint({formatter: "prose"}))
+      .pipe(tslint.report({emitError: false}))
       .on("error", utils.createErrorHandler({
         exit: process.exit,
         exitOnError: options.exitOnError,

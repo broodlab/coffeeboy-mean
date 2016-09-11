@@ -3,7 +3,6 @@
 const spawnProcess = require("child_process").spawn;
 const gulp = require("gulp");
 const gutil = require("gulp-util");
-const sleep = require("sleep");
 
 exports.createStartStopNodeAppTasks = (options) => {
 
@@ -21,13 +20,11 @@ exports.createStartStopNodeAppTasks = (options) => {
       gutil.log(gutil.colors.red(logPrefix), data.toString());
     });
 
-    sleep.sleep(options.waitSecondsTilStart || 1);
-    done();
+    setTimeout(() => done(), options.waitSecondsTilStart || 1);
   });
 
   gulp.task(options.stopTaskName, (done) => {
     childProcess.kill("SIGINT");
-    sleep.sleep(options.waitSecondsTilStop || 1);
-    done();
+    setTimeout(() => done(), options.waitSecondsTilStop || 1);
   });
 };
